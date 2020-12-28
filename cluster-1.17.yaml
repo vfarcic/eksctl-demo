@@ -1,0 +1,12 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: devops-catalog
+  region: us-east-1
+  version: "1.17"
+managedNodeGroups:
+- name: primary
+  instanceType: t2.small
+  minSize: 3
+  maxSize: 6
+  spot: true
