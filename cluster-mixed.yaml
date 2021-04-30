@@ -1,0 +1,18 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: devops-toolkit
+  region: us-east-2
+  version: "1.19"
+managedNodeGroups:
+- name: linux
+  instanceType: t2.medium
+  minSize: 3
+  maxSize: 6
+  spot: true
+nodeGroups:
+- name: windows
+  amiFamily: WindowsServer2019FullContainer
+  instanceType: t2.medium
+  minSize: 3
+  maxSize: 6
